@@ -39,15 +39,15 @@ func NewConfig() (*Config, error) {
 
 	var cfg *Config = &Config{}
 
-	cfg.PubSubProjectID = Getenv("PUBSUB_PROJECT_ID", "trial-pusdatin-kemenkes")
-	cfg.SourceType = Getenv("SOURCE_TYPE", "mariadb")
-	cfg.SourceHost = Getenv("SOURCE_HOST", "127.0.0.1")
-	cfg.SourcePort = Getenv("SOURCE_PORT", "3306")
-	cfg.SourceUser = Getenv("SOURCE_USER", "root")
-	cfg.SourcePassword = Getenv("SOURCE_PASSWORD", "admin")
-	cfg.SourceDatabaseName = Getenv("SOURCE_DATABASE_NAME", "sisdmk-dikti")
-	cfg.OffsetBucketName = Getenv("OFFSET_BUCKET_NAME", "dto-ndjson-datalake-storage-test")
-	cfg.OffsetObjectPrefix = Getenv("OFFSET_OBJECT_PREFIX", "stream_offset/bronze_stream_nar_antigen.dt_antigen_sampel")
+	cfg.PubSubProjectID = Getenv("PUBSUB_PROJECT_ID", "")
+	cfg.SourceType = Getenv("SOURCE_TYPE", "")
+	cfg.SourceHost = Getenv("SOURCE_HOST", "")
+	cfg.SourcePort = Getenv("SOURCE_PORT", "")
+	cfg.SourceUser = Getenv("SOURCE_USER", "")
+	cfg.SourcePassword = Getenv("SOURCE_PASSWORD", "")
+	cfg.SourceDatabaseName = Getenv("SOURCE_DATABASE_NAME", "")
+	cfg.OffsetBucketName = Getenv("OFFSET_BUCKET_NAME", "")
+	cfg.OffsetObjectPrefix = Getenv("OFFSET_OBJECT_PREFIX", "")
 
 	var maxAllowedPacketMB string = Getenv("MAX_ALLOWED_PACKET_MB", "500")
 	cfg.MaxAllowedPacketMB, err = strconv.Atoi(maxAllowedPacketMB)
@@ -64,13 +64,13 @@ func NewConfig() (*Config, error) {
 		return nil, err
 	}
 
-	var sourceTables string = Getenv("SOURCE_TABLES", "dummy_table")
+	var sourceTables string = Getenv("SOURCE_TABLES", "")
 	cfg.SourceTables = strings.Split(sourceTables, ",")
 
-	var pubSubSchemaIDS string = Getenv("PUBSUB_SCHEMA_IDS", "bronze_stream_nar_antigen.dt_antigen_sampel")
+	var pubSubSchemaIDS string = Getenv("PUBSUB_SCHEMA_IDS", "")
 	cfg.PubSubSchemaIds = strings.Split(pubSubSchemaIDS, ",")
 
-	var pubSubTopicIDS string = Getenv("PUBSUB_TOPIC_IDS", "bronze_stream_nar_antigen.dt_antigen_sampel")
+	var pubSubTopicIDS string = Getenv("PUBSUB_TOPIC_IDS", "")
 	cfg.PubSubTopicIds = strings.Split(pubSubTopicIDS, ",")
 
 	count := []int{len(cfg.SourceTables), len(cfg.PubSubSchemaIds), len(cfg.PubSubTopicIds)}
