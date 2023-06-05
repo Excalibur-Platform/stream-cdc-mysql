@@ -39,15 +39,15 @@ func NewConfig() (*Config, error) {
 
 	var cfg *Config = &Config{}
 
-	cfg.PubSubProjectID = Getenv("PUBSUB_PROJECT_ID", "")
-	cfg.SourceType = Getenv("SOURCE_TYPE", "")
-	cfg.SourceHost = Getenv("SOURCE_HOST", "")
-	cfg.SourcePort = Getenv("SOURCE_PORT", "")
-	cfg.SourceUser = Getenv("SOURCE_USER", "")
-	cfg.SourcePassword = Getenv("SOURCE_PASSWORD", "")
-	cfg.SourceDatabaseName = Getenv("SOURCE_DATABASE_NAME", "")
-	cfg.OffsetBucketName = Getenv("OFFSET_BUCKET_NAME", "")
-	cfg.OffsetObjectPrefix = Getenv("OFFSET_OBJECT_PREFIX", "")
+	cfg.PubSubProjectID = Getenv("PUBSUB_PROJECT_ID", "private-project")
+	cfg.SourceType = Getenv("SOURCE_TYPE", "mysql")
+	cfg.SourceHost = Getenv("SOURCE_HOST", "localhost")
+	cfg.SourcePort = Getenv("SOURCE_PORT", "3306")
+	cfg.SourceUser = Getenv("SOURCE_USER", "admin")
+	cfg.SourcePassword = Getenv("SOURCE_PASSWORD", "admin")
+	cfg.SourceDatabaseName = Getenv("SOURCE_DATABASE_NAME", "example")
+	cfg.OffsetBucketName = Getenv("OFFSET_BUCKET_NAME", "example")
+	cfg.OffsetObjectPrefix = Getenv("OFFSET_OBJECT_PREFIX", "example")
 
 	var maxAllowedPacketMB string = Getenv("MAX_ALLOWED_PACKET_MB", "500")
 	cfg.MaxAllowedPacketMB, err = strconv.Atoi(maxAllowedPacketMB)
