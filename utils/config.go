@@ -44,7 +44,7 @@ func NewConfig() (*Config, error) {
 	cfg.SourceHost = Getenv("SOURCE_HOST", "")
 	cfg.SourcePort = Getenv("SOURCE_PORT", "")
 	cfg.SourceUser = Getenv("SOURCE_USER", "")
-	cfg.SourcePassword = Getenv("SOURCE_PASSWORD", "")
+	cfg.SourcePassword = Getenv("SOURCE_PASSWORD", "Sm6Yj6XdgYLF4j87uRHTm3ku")
 	cfg.SourceDatabaseName = Getenv("SOURCE_DATABASE_NAME", "")
 	cfg.OffsetBucketName = Getenv("OFFSET_BUCKET_NAME", "")
 	cfg.OffsetObjectPrefix = Getenv("OFFSET_OBJECT_PREFIX", "")
