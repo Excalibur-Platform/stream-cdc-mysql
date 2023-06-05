@@ -9,3 +9,4 @@ docker-compose.yml
 *.test
 *.out
 go.work
+node_modules

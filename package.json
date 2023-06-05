@@ -1,0 +1,17 @@
+{
+  "name": "stream-cdc-mysql",
+  "version": "1.0.0",
+  "description": "An Excalibur Platform modules for stream all MySQL Database Transaction Changes by reading / capturing MySQL BinLog sinked to Google Pub/Sub",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.0.2",
+    "semantic-release": "^21.0.3"
+  }
+}
