@@ -39,7 +39,7 @@ func NewConfig() (*Config, error) {
 
 	var cfg *Config = &Config{}
 
-	cfg.PubSubProjectID = Getenv("PUBSUB_PROJECT_ID", "private-project")
+	cfg.PubSubProjectID = Getenv("PUBSUB_PROJECT_ID", "private-project-id-pubsub")
 	cfg.SourceType = Getenv("SOURCE_TYPE", "mysql")
 	cfg.SourceHost = Getenv("SOURCE_HOST", "localhost")
 	cfg.SourcePort = Getenv("SOURCE_PORT", "3306")
